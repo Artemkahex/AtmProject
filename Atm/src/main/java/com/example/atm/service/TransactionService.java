@@ -13,7 +13,7 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
-    public List<Transaction> getTransactionsByAccountId(Long accountId) {
+    public List<Transaction> getTransactionsByAccountId(Integer accountId) {
         return transactionRepository.findByAccountId(accountId);
     }
 }

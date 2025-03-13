@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    List<Transaction> findByAccountId(Long accountId);
+public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
+    List<Transaction> findByAccountId(Integer accountId);
 }

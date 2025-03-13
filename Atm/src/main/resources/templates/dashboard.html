@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет | ATM System</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/app.js}" defer></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <a href="/" class="logo">ATM System</a>
+        <nav>
+            <a href="/dashboard">Мои счета</a>
+            <a href="/create-account">Новый счет</a>
+            <a href="/logout">Выйти</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Личный кабинет</h1>
+
+    <div class="welcome-message fade-in">
+        <p>Здравствуйте, <span th:text="${username}"></span>!</p>
+    </div>
+
+    <div class="accounts fade-in" th:if="${accounts != null && !accounts.isEmpty()}">
+        <h2>Ваши счета</h2>
+        <div class="account-list">
+            <div class="account-item" th:each="account : ${accounts}">
+                <h3>Счет <span th:text="${account.accountNumber}"></span></h3>
+                <div class="account-balance">
+                    <p>Баланс: <span th:text="${account.balance}"></span> руб.</p>
+                </div>
+                <div class="account-actions">
+                    <a th:href="@{'/account/' + ${account.id}}">Управление счетом</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-accounts fade-in" th:if="${accounts == null || accounts.isEmpty()}">
+        <p>У вас пока нет счетов.</p>
+        <a href="/create-account">Создать новый счет</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2025 ATM System. Все права защищены.</p>
+    </div>
+</footer>
+</body>
+</html>

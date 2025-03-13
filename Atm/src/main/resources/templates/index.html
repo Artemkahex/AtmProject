@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM - Личный банковский помощник</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/app.js}" defer></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <a href="/" class="logo">ATM System</a>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Добро пожаловать в ATM</h1>
+
+    <div class="welcome-message">
+        <p>Ваш персональный банковский помощник для управления счетами онлайн.</p>
+    </div>
+
+    <nav>
+        <a href="/register" class="fade-in">Регистрация</a>
+        <a href="/login" class="fade-in">Вход</a>
+    </nav>
+
+    <div class="info-message fade-in">
+        <p>С помощью нашей системы вы можете:</p>
+        <ul>
+            <li>Создавать и управлять банковскими счетами</li>
+            <li>Пополнять баланс и снимать деньги</li>
+            <li>Отслеживать историю транзакций</li>
+            <li>Безопасно управлять своими финансами</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2025 ATM System. Все права защищены.</p>
+    </div>
+</footer>
+</body>
+</html>

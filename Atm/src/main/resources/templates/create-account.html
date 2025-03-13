@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание счета</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/app.js}" defer></script>
+</head>
+<body>
+<h1>Создание нового счета</h1>
+
+<form action="/create-account" method="post">
+    <div class="form-group">
+        <p>Вы собираетесь создать новый счет для пользователя <span th:text="${username}"></span>.</p>
+    </div>
+    <button type="submit">Создать счет</button>
+</form>
+
+<div class="links">
+    <a href="/dashboard">Вернуться в личный кабинет</a>
+</div>
+</body>
+</html>
